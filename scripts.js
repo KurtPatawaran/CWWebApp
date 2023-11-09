@@ -1,10 +1,9 @@
-let webstore = new VTTCue
-({
-    el:'#wholeApp',
+let webstore = new Vue({
+    el:'#app',
 
     data:
     {
-
+        siteName: 'After School Activities',
     },
 
     methods:
@@ -14,7 +13,7 @@ let webstore = new VTTCue
 
     computed:
     {
-        
+
     }
 
 
