@@ -32,8 +32,12 @@ let webstore = new Vue({
             this.subject.space--;
         },
 
-        showCheckout(){
-            this.showSubject = !this.showSubject;
+        showCheckout(){ //If cart is empty, Prompt the user to choose a subject
+            if (this.cart.length > 0) {
+                this.showSubject = !this.showSubject;
+            } else {
+                alert('Add an item to the cart to proceed to checkout.');
+            }
         },
 
         submitForm() {
@@ -43,12 +47,14 @@ let webstore = new Vue({
 
     computed:
     {
-        // cartItemCount:  function() {
-        //     return this.cartItemCount.length || '';
-        // },
+        cartItemCount: function () {
+            return this.cart.length || 0; //This determines the number in the cart . Used in codnition such as Buy Now! in subject spaces
+        },
 
         canAddToCart:   function() {
-            return this.subject.availableSpaces > this.cart.length;
+            return this.subject.availableSpaces > this.cart.length; //THis condition check if theres more available spaces than the cart, If true user can add to the cart
         },
+
+
     },
 });

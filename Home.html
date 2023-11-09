@@ -19,7 +19,7 @@
                     </div>
                     <div id="chkBox">
                         <button v-on:click="showCheckout" id="chkBtn">
-                            {{cart.Length}}
+                            {{cart.length > 0 ? cart.length : ''}} <!---->
                             <span class="fas fa-cart-plus"></span> Checkout
                         </button>
                     </div>
@@ -27,6 +27,8 @@
             </header>
 
             <main>
+                
+
 
                 <!--Subject Page-->
                 <div v-if="showSubject">
