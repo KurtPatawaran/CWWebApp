@@ -1,3 +1,38 @@
+#chkBox{
+    width: 100%;
+    position: absolute;
+    
+}
+
+#chkBtn{
+    font-weight: bold;
+    position: absolute;
+    right: 5%;
+    
+}
+
 p{
     font-weight: bold;
+}
+
+#subjectDiv{
+    position: absolute;
+    border-style:solid;
+    border-radius: 5px;
+    margin-left: 10%;
+    margin-top: 2%;
+    width: 21%
+}
+
+img{
+    width: 150px;
+    height: 150px;
+    float: right;
+}
+
+#subjectText{
+    font-size: 20px;
+    line-height: 5%;
+    margin-top: 40px;
+    margin-left: 10%;
 }

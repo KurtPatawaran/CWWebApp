@@ -12,9 +12,40 @@
 
     <body>
         <div id="app">
-            <header>
-                <h1>{{ siteName }}</h1>
+            <header style="background-color: rgb(62, 64, 66);">
+                <div style="padding-bottom: 30px; padding-top: 1px;">
+                    <div style="margin-left: 30px;">
+                        <p style="font-size:40px;">{{ siteName }}</p>
+                    </div>
+                    <div id="chkBox">
+                        <button v-on:click="showCheckout" id="chkBtn">
+                            <span class="fas fa-cart-plus"></span> Checkout
+                        </button>
+                    </div>
+                </div>
+
             </header>
+
+            <main>
+
+                <!--Subject Page-->
+                <div id="subjectDiv">
+                    <div id="imgDiv">
+                        <figure>
+                            <img v-bind:src="subject.image">
+                        </figure>
+                    </div>
+                    <div id="subjectText">
+                        <p v-text="subject.title" style="font-size: 30px;"> <br></p>
+                        <p>Location: {{subject.location}}<br></p>
+                        <p>Space: {{subject.space}}<br></p>
+                        <p>Price: {{subject.price}}</p><br></p>
+
+                        <button v-on:click="addToCart" v-if="canAddToCart"> Add to cart </button>
+                    </div>
+                </div>
+
+            </main>
 
         </div>
     <script type="text/javascript" src="scripts.js"></script>  
