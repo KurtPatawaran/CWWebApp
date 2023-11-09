@@ -19,6 +19,7 @@
                     </div>
                     <div id="chkBox">
                         <button v-on:click="showCheckout" id="chkBtn">
+                            {{cartItemCount}}
                             <span class="fas fa-cart-plus"></span> Checkout
                         </button>
                     </div>
@@ -36,12 +37,22 @@
                         </figure>
                     </div>
                     <div id="subjectText">
-                        <p v-text="subject.title" style="font-size: 30px;"> <br></p>
-                        <p>Location: {{subject.location}}<br></p>
-                        <p>Space: {{subject.space}}<br></p>
-                        <p>Price: {{subject.price}}</p><br></p>
+                        <p v-text="subject.title" style="font-size: 30px;"></p>
+                        <p>Location: {{subject.location}}</p>
+                        <p>Space: {{subject.space}}</p>
+                        <p>Price: {{subject.price}}</p></p>
 
-                        <button v-on:click="addToCart" v-if="canAddToCart"> Add to cart </button>
+                        <button v-on:click="addToCart"
+                        v-if="canAddToCart"> Add to cart </button>
+
+                        <button 
+                            disabled="disabled" v-else>
+                                N/A
+                        </button>
+                        <span v-if="subject.availableSpaces === cartItemCount">
+                            All Out!
+                        </span>
+
                     </div>
                 </div>
 

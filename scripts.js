@@ -22,7 +22,13 @@ let webstore = new Vue({
 
     computed:
     {
+        cartItemCount:  function() {
+            return this.cartItemCount.length || '';
+        },
 
+        canAddToCart:   function() {
+            return this.product.availableSpaces > this.cartItemCount;
+        }
     }
 
 
