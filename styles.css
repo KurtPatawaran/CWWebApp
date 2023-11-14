@@ -1,14 +1,12 @@
 #chkBox{
-    width: 100%;
-    position: absolute;
-    
+    width: 100%; 
+    margin-top: 10px;
 }
 
 #chkBtn{
     font-weight: bold;
     position: absolute;
-    right: 5%;
-    
+    right: 5%; 
 }
 
 p{
@@ -21,18 +19,25 @@ p{
     border-radius: 5px;
     margin-left: 10%;
     margin-top: 2%;
-    width: 22%
+    width: 25%
 }
 
 img{
     width: 150px;
     height: 150px;
     float: right;
+    margin-right: -20px;
+    margin-bottom: 10px;
 }
 
 #subjectText{
-    font-size: 20px;
+    font-size: 15px;
     line-height: 5%;
-    margin-top: 40px;
+    margin-top: 50px;
     margin-left: 10%;
+}
+
+#CartPage{
+    margin-top: 20px;
+    margin-left: 20%;
 }

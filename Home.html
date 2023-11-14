@@ -12,23 +12,35 @@
 
     <body>
         <div id="app">
-            <header style="background-color: rgb(62, 64, 66);">
-                <div style="padding-bottom: 30px; padding-top: 1px;">
+            <header style="background-color: rgb(62, 64, 66); padding-bottom: 5px; padding-top: 1px;">
+                <div>
                     <div style="margin-left: 30px;">
                         <p style="font-size:40px;">{{ siteName }}</p>
                     </div>
-                    <div id="chkBox">
+                    <!-- <div id="chkBox">
                         <button v-on:click="showCheckout" id="chkBtn">
-                            {{cart.length > 0 ? cart.length : ''}} <!---->
+                            {{cart.length > 0 ? cart.length : ''}} 
                             <span class="fas fa-cart-plus"></span> Checkout
                         </button>
-                    </div>
+                    </div> -->
                 </div>
             </header>
 
             <main>
-                
+                <!--CheckOut Box-->
+                <div v-if = "showSubject"id="chkBox">
+                    <button v-on:click="showCheckout" id="chkBtn">
+                        {{cart.length > 0 ? cart.length : ''}} 
+                        <span class="fas fa-cart-plus"></span> Cart
+                    </button>
+                </div>
 
+
+                <div v-else= "showSubject" id="chkBox">
+                    <button v-on:click="showCheckout" id="chkBtn">
+                        <span class="fas fa-cart-plus"></span> Return
+                    </button>
+                </div>
 
                 <!--Subject Page-->
                 <div v-if="showSubject">
@@ -61,8 +73,8 @@
                 </div>
 
 
-                <div v-else>
-                    <h2>Checkout</h2>
+                <div v-else id="CartPage">
+                    <h2 style="margin-top: 10px;">Checkout</h2>
                     <p>
                         <strong>First Name:</strong>
                         <!--Input Field will bound to 'firstName' in the 'order' object-->

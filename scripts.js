@@ -17,7 +17,7 @@ let webstore = new Vue({
             id: 1001,
             title: "Math",
             location: "Dubai",
-            image: "mathIcon.png",
+            image: "Icons/mathIcon.png",
             price: 350 + "AED",
             space:10,               //User Student View
             availableSpaces:10,      //Inventory View
