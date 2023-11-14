@@ -1,42 +1,33 @@
 let webstore = new Vue({
     el: '#app',
 
-    data:
-    {
+    data: {
         siteName: 'After School Activities',
         showSubject: true,
-
         order: {
             firstName: '',
             lastName: '',
             contactNum: '',
-
         },
-
-
         subjects: subjects,
         cart: [],
     },
 
-    methods:
-    {
+    methods: {
         addToCart: function (subject) {
-            this.cart.push(subject.id);    //console.log(this.cart)
-            this.subject.space--;
+            this.cart.push(subject.id);
         },
 
-
-
-        showCheckout() { //If cart is empty, Prompt the user to choose a subject
-            // if (this.cart.length > 0) {
-            this.showSubject = !this.showSubject;
-            // } else {
-            //     alert('Add an item to the cart to proceed to checkout.');
-            // }
+        showCheckout() {
+            if (this.cart.length > 0) {
+                this.showSubject = !this.showSubject;
+            } else {
+                alert('Add a lesson to the cart to proceed to checkout.');
+            }
         },
 
         submitForm() {
-            { alert('You Have Succesfully Applied :D') }
+            alert('You Have Successfully Applied :D');
         },
 
         cartCount(id) {
@@ -49,23 +40,27 @@ let webstore = new Vue({
             return count;
         },
 
-        // getSubjects() {
-        //     if (typeof subjects !== "undefined") {
-        //         this.subject = subjects;
-        //     }
-        // },
+        canAddToCart: function (subject) {
+            return subject.availableSpaces > this.cartCount(subject.id);
+        },
+
+        removeFromCart(id) {
+            const index = this.cart.indexOf(id);
+            if (index !== -1) {
+                this.cart.splice(index, 1);
+            }
+        },
+
+        getSubjectById(id) {
+            return this.subjects.find(subject => subject.id === id);
+        },
 
     },
 
-    computed:
-    {
+    computed: {
         cartItemCount: function () {
-            return this.cart.length || ''; //This determines the number in the cart . Used in codnition such as Buy Now! in subject spaces
+            return this.cart.length || '';
         },
-
-        // canAddToCart:   function() {
-        //     return this.subject.availableSpaces > this.cart.length; //THis condition check if theres more available spaces than the cart, If true user can add to the cart
-        // },
 
         sortedSubjects() {
             let subjectsArray = this.subjects.slice(0);
@@ -76,10 +71,7 @@ let webstore = new Vue({
                     return -1;
                 return 0;
             }
-            return subjectArray.sort(compare);
-        }
-
+            return subjectsArray.sort(compare);
+        },
     },
-
-
 });
