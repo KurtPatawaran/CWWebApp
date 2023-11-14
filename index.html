@@ -1,108 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
 
-        <title>After School Activities</title>
-        
-        <script src="https://cdn.jsdelivr.net/npm/vue@2.7.14/dist/vue.js"></script>
-        <script src="subjects.js"></script>
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
-        <link rel="stylesheet" href="styles.css">
+<head>
 
-    </head>
+    <title>After School Activities</title>
 
-    <body>
-        <div id="app">
-            <header style="background-color: rgb(62, 64, 66); padding-bottom: 5px; padding-top: 1px;">
-                <div>
-                    <div style="margin-left: 30px;">
-                        <p style="font-size:40px;">{{ siteName }}</p>
-                    </div>
-                    <!-- <div id="chkBox">
-                        <button v-on:click="showCheckout" id="chkBtn">
-                            {{cart.length > 0 ? cart.length : ''}} 
-                            <span class="fas fa-cart-plus"></span> Checkout
-                        </button>
-                    </div> -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.14/dist/vue.js"></script>
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+
+<body>
+    <div id="app">
+        <header style="background-color: rgb(62, 64, 66); padding-bottom: 5px; padding-top: 1px;">
+            <div>
+                <div style="margin-left: 30px;">
+                    <p style="font-size:40px;">{{ siteName }}</p>
                 </div>
-            </header>
-
-            <main>
-                <!--CheckOut Box-->
-                <div v-if = "showSubject"id="chkBox">
+                <div id="chkBox">
                     <button v-on:click="showCheckout" id="chkBtn">
-                        {{cart.length > 0 ? cart.length : ''}} 
-                        <span class="fas fa-cart-plus"></span> Cart
+                        {{cart.length > 0 ? cart.length : ''}}
+                        <span class="fas fa-cart-plus"></span> Checkout
                     </button>
                 </div>
+            </div>
+        </header>
 
+        <main>
 
-                <div v-else= "showSubject" id="chkBox">
-                    <button v-on:click="showCheckout" id="chkBtn">
-                        <span class="fas fa-cart-plus"></span> Return
-                    </button>
-                </div>
+            <!--Subject Page-->
+            <div v-if="showSubject">
+                <div id="subjectDiv" v-for:="subject in sortedSubjects">
+                    <div id="imgDiv">
+                        <figure>
+                            <img v-bind:src="subject.image">
+                        </figure>
+                    </div>
+                    <div id="subjectText">
+                        <p v-text="subject.title" style="font-size: 30px;"></p>
+                        <p>Location: {{subject.location}}</p>
+                        <p>Space: {{subject.space}}</p>
+                        <p>Price: {{subject.price}}</p>
+                        </p>
 
-                <!--Subject Page-->
-                <div v-if="showSubject">
-                    <div id="subjectDiv">
-                        <div id="imgDiv">
-                            <figure>
-                                <img v-bind:src="subject.image">
-                            </figure>
-                        </div>
-                        <div id="subjectText">
-                            <p v-text="subject.title" style="font-size: 30px;"></p>
-                            <p>Location: {{subject.location}}</p>
-                            <p>Space: {{subject.space}}</p>
-                            <p>Price: {{subject.price}}</p></p>
+                        <button v-on:click="addToCart(subject)" v-if="canAddToCart"> Add to cart </button>
+                        <button disabled="disabled" v-else> N/A </button>
 
-                            <button v-on:click="addToCart" v-if="canAddToCart"> Add to cart </button>
-                            <button disabled="disabled" v-else> N/A </button>
-
-                            <span v-if="subject.availableSpaces === cartItemCount">
-                                All Out!
-                            </span>
-                            <span v-else-if="subject.availableSpaces - cartItemCount < 5">
-                                only {{subject.availableSpaces - cartItemCount}} Left!!
-                            </span>
-                            <span v-else>
-                                BUY NOW!
-                            </span>
-                        </div>
+                        <span v-if="subject.availableSpaces === cartCount(subject.id)">
+                            All Out!
+                        </span>
+                        <span v-else-if="subject.availableSpaces - cartCount(subject.id) < 5">
+                            only {{subject.availableSpaces - cartItemCount(subject.id)}} Left!!
+                        </span>
+                        <span v-else>
+                            BUY NOW!
+                        </span>
                     </div>
                 </div>
+            </div>
 
 
-                <div v-else id="CartPage">
-                    <h2 style="margin-top: 10px;">Checkout</h2>
-                    <p>
-                        <strong>First Name:</strong>
-                        <!--Input Field will bound to 'firstName' in the 'order' object-->
-                        <input v-model.trim="order.firstName"/>
-                    </p>
-                    <p>
-                        <strong>Last Name:</strong>
-                        <!--Input Field will bound to 'firstName' in the 'order' object-->
-                        <input v-model.trim="order.lastName"/>
-                    </p>
-                    <p>
-                        <strong>Contact Number:</strong>
-                        <!--Input Field will bound to 'firstName' in the 'order' object-->
-                        <input v-model.trim="order.contactNum" type="number"/>
-                    </p>
+            <div v-else id="CartPage">
+                <h2 style="margin-top: 10px;">Checkout</h2>
+                <p>
+                    <strong>First Name:</strong>
+                    <!-- Input Field will bound to 'firstName' in the 'order' object -->
+                    <input v-model.trim="order.firstName" />
+                </p>
+                <p>
+                    <strong>Last Name:</strong>
+                    <!-- Input Field will bound to 'firstName' in the 'order' object -->
+                    <input v-model.trim="order.lastName" />
+                </p>
+                <p>
+                    <strong>Contact Number:</strong>
+                    <!-- Input Field will bound to 'firstName' in the 'order' object -->
+                    <input v-model.trim="order.contactNum" type="number" />
+                </p>
 
 
-                    <h2>Enrolee Applicant</h2>
-                    <p>First Name: {{order.firstName}}</p>
-                    <p>Last Name: {{order.lastName}}</p>
-                    <p>Contact Number: {{order.contactNum}}</p>
-                    <button v-on:click="submitForm"> Place Order </button>
-                </div>
-            </main>
-        </div>
-        
-        <script type="text/javascript" src="scripts.js"></script>  
-        
-    </body>
+                <h2>Enrolee Applicant</h2>
+                <p>First Name: {{order.firstName}}</p>
+                <p>Last Name: {{order.lastName}}</p>
+                <p>Contact Number: {{order.contactNum}}</p>
+                <button v-on:click="submitForm"> Place Order </button>
+            </div>
+        </main>
+    </div>
+
+    <!-- <script type="text/javascript" src="scripts.js"> -->
+
+    <!-- </script> -->
+    <script src="subjects.js"></script>
+
+    <script type="text/javascript"></script>
+
+</body>
+
 </html>
