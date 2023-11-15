@@ -12,7 +12,7 @@ let subjects = [
 {
     id: 1002,
     title: "English Writing Lessons",
-    location: "Abu Dhabi",
+    location: "Ajman",
     image: "Icons/englishIcon.png",
     price: 200 + " AED",
     space:5,               //User Student View
@@ -32,7 +32,7 @@ let subjects = [
 {
     id: 1004,
     title: "Singing Lessons",
-    location: "Sharjah",
+    location: "Ajman",
     image: "Icons/singingIcon.png",
     price: 300 + " AED",
     space:7,               //User Student View
@@ -72,7 +72,7 @@ let subjects = [
 {
     id: 1008,
     title: "Guitar Lessons",
-    location: "Abu Dhabi",
+    location: "Ajman",
     image: "Icons/guitarIcon.png",
     price: 300 + " AED",
     space:12,               //User Student View
