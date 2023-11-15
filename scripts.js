@@ -9,7 +9,7 @@ let webstore = new Vue({
             lastName: '',
             contactNum: '',
         },
-        subjects: subjects,
+        subjects: subjects || [],
         cart: [],
         sortOrder: '',
         searchQuery: '',
