@@ -23,6 +23,13 @@
         </header>
 
         <main>
+            <div>
+                <label>
+                    Search by Title or Location:
+                    <input v-model.trim="searchQuery" />
+                </label>
+            </div>
+
             <div id="chkBox">
                 <button v-on:click="showCheckout1" id="chkBtn" v-if="showSubject">
                     {{cart.length > 0 ? cart.length : ''}}
@@ -36,7 +43,52 @@
 
             <!--Subject Page-->
             <div v-if="showSubject">
-                <div id="subjectDiv" v-for="subject in sortedSubjects">
+
+                <div>
+                    <!-- Added these buttons for sorting -->
+                    <label>
+                        <input type="radio" v-model="sortOrder" value="ascSubject">
+                        Sort Subject A to Z
+                    </label>
+                    
+                    <label>
+                        <input type="radio" v-model="sortOrder" value="descSubject">
+                        Sort Subject Z to A
+                    </label>
+                    
+                    <label>
+                        <input type="radio" v-model="sortOrder" value="ascLocation">
+                        Sort Location A to Z
+                    </label>
+                    
+                    <label>
+                        <input type="radio" v-model="sortOrder" value="descLocation">
+                        Sort Location Z to A
+                    </label>
+                    
+                    <label>
+                        <input type="radio" v-model="sortOrder" value="ascPrice">
+                        Sort Price Low to High
+                    </label>
+                    
+                    <label>
+                        <input type="radio" v-model="sortOrder" value="descPrice">
+                        Sort Price High to Low
+                    </label>
+                    
+                    <label>
+                        <input type="radio" v-model="sortOrder" value="ascSpaces">
+                        Sort Spaces Low to High
+                    </label>
+                    
+                    <label>
+                        <input type="radio" v-model="sortOrder" value="descSpaces">
+                        Sort Spaces High to Low
+                    </label>
+                    
+                </div>
+
+                <div id="subjectDiv" v-for="subject in filteredSubjects">
                     <div id="imgDiv">
                         <figure>
                             <img v-bind:src="subject.image">

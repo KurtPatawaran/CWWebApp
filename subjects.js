@@ -4,7 +4,7 @@ let subjects = [
     title: "Mathematics Lessons",
     location: "Dubai",
     image: "Icons/mathIcon.png",
-    price: 350 + "AED",
+    price: 350 + " AED",
     space:10,               //User Student View
     availableSpaces:10,      //Inventory View
 },
@@ -14,9 +14,9 @@ let subjects = [
     title: "English Writing Lessons",
     location: "Abu Dhabi",
     image: "Icons/englishIcon.png",
-    price: 200 + "AED",
-    space:10,               //User Student View
-    availableSpaces:10,      //Inventory View
+    price: 200 + " AED",
+    space:5,               //User Student View
+    availableSpaces:5,      //Inventory View
 },
 
 {
@@ -24,9 +24,9 @@ let subjects = [
     title: "Basketball Lessons",
     location: "Sharjah",
     image: "Icons/basketballIcon.png",
-    price: 500 + "AED",
-    space:10,               //User Student View
-    availableSpaces:10,      //Inventory View
+    price: 500 + " AED",
+    space:7,               //User Student View
+    availableSpaces:7,      //Inventory View
 },
 
 {
@@ -34,19 +34,19 @@ let subjects = [
     title: "Singing Lesonns",
     location: "Sharjah",
     image: "Icons/singingIcon.png",
-    price: 300 + "AED",
-    space:10,               //User Student View
-    availableSpaces:10,      //Inventory View
+    price: 300 + " AED",
+    space:7,               //User Student View
+    availableSpaces:7,      //Inventory View
 },
 
 {
     id: 1005,
     title: "FootBall Lessons",
     location: "Dubai",
-    image: "Icons/footBallIcon.png",
-    price: 500 + "AED",
-    space:10,               //User Student View
-    availableSpaces:10,      //Inventory View
+    image: "Icons/footballIcon.png",
+    price: 500 + " AED",
+    space:15,               //User Student View
+    availableSpaces:15,      //Inventory View
 },
 
 {
@@ -54,9 +54,9 @@ let subjects = [
     title: "Karate Lessons",
     location: "Dubai",
     image: "Icons/karateIcon.png",
-    price: 150 + "AED",
-    space:10,               //User Student View
-    availableSpaces:10,      //Inventory View
+    price: 150 + " AED",
+    space:6,               //User Student View
+    availableSpaces:6,      //Inventory View
 },
 
 {
@@ -64,7 +64,7 @@ let subjects = [
     title: "Dancing Lessons",
     location: "Sharjah",
     image: "Icons/dancingIcon.png",
-    price: 200 + "AED",
+    price: 200 + " AED",
     space:10,               //User Student View
     availableSpaces:10,      //Inventory View
 },
@@ -72,11 +72,11 @@ let subjects = [
 {
     id: 1008,
     title: "Guitar Lessons",
-    location: "Dubai",
+    location: "Abu Dhabi",
     image: "Icons/guitarIcon.png",
-    price: 300 + "AED",
-    space:10,               //User Student View
-    availableSpaces:10,      //Inventory View
+    price: 300 + " AED",
+    space:12,               //User Student View
+    availableSpaces:12,      //Inventory View
 },
 
 {
@@ -84,9 +84,9 @@ let subjects = [
     title: "Programming Lessons",
     location: "Dubai",
     image: "Icons/programingIcon.png",
-    price: 250 + "AED",
-    space:10,               //User Student View
-    availableSpaces:10,      //Inventory View
+    price: 250 + " AED",
+    space:9,               //User Student View
+    availableSpaces:9,      //Inventory View
 },
 
 {
@@ -94,8 +94,8 @@ let subjects = [
     title: "Culinary Lessons",
     location: "Dubai",
     image: "Icons/culinaryIcon.png",
-    price: 800 + "AED",
-    space:10,               //User Student View
-    availableSpaces:10,      //Inventory View
+    price: 800 + " AED",
+    space:8,               //User Student View
+    availableSpaces:8,      //Inventory View
 }
 ];
