@@ -31,7 +31,7 @@ let subjects = [
 
 {
     id: 1004,
-    title: "Singing Lesonns",
+    title: "Singing Lessons",
     location: "Sharjah",
     image: "Icons/singingIcon.png",
     price: 300 + " AED",

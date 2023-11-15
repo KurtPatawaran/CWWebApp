@@ -24,7 +24,7 @@
             <div id="chkBox">
                 <button v-on:click="showCheckout1" id="chkBtn" v-if="showSubject">
                     {{cart.length > 0 ? cart.length : ''}}
-                    <span class="fas fa-cart-plus"></span> Checkout
+                    <span class="fas fa-cart-plus"></span> Cart
                 </button>
 
                 <button v-on:click="showCheckout2" id="chkBtn" v-else>
@@ -119,7 +119,7 @@
 
                 <div v-else id="cartPage">
                     <div id="usrDetailDiv">
-                        <h2>Checkout</h2>
+                        <h2>Enrolee Details</h2>
                         <p>
                             <strong>First Name:</strong>
                             <!-- Input Field will bound to 'firstName' in the 'order' object -->
@@ -144,7 +144,7 @@
                     </div>
 
                     <!-- Display Cart Contents -->
-                    <h1 style="font-size: 50px; margin-left: 30px;">Shopping Cart</h2>
+                    <h1 style="font-size: 50px; margin-left: 30px; color: antiquewhite">Shopping Cart</h2>
                     <div id="cartlistPane">
                         <ol>
                             <li v-for="item in cart" :key="item.id" id="textCart">

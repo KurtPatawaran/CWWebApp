@@ -83,11 +83,12 @@ font-weight: bold;
 
 /* Checkout Page */
 #cartPage{
-    background-color: brown;
-    width: 100%;
+    background-color: darkslategray;
+    width: 99.4%;
     height: 100%;
     margin-top: 50px;
-    position: absolute
+    position: absolute;
+    border-radius: 25px;
 }
 
 #usrDetailDiv{
@@ -96,8 +97,10 @@ font-weight: bold;
     width: 30%;
     right: 5%;
     padding-left: 5px;
-    margin-top: 10px;
+    margin-top: 20px;
     border-radius: 15px;
+    border-style:solid;
+    box-shadow: 1px 1px 1px 1px;
 }
 
 #copyDetailDiv{
@@ -106,8 +109,10 @@ font-weight: bold;
     width: 30%;
     right: 5%;
     padding-left: 5px;
-    margin-top: 13%;
+    margin-top: 14%;
     border-radius: 15px;
+    border-style:solid;
+    box-shadow: 1px 1px 1px 1px;
 }
 
 #cartlistPane{
@@ -118,12 +123,16 @@ font-weight: bold;
     padding-left: 20px;
     border-radius: 15px;
     font-size: 20px;
+    border-style:solid;
+    box-shadow: 1px 1px 1px 1px;
+    max-height: 500px; /* Adjust the height as needed */
+    overflow-y: auto;
 }
 
 #textCart{
-    margin-left: 20%;
+    margin-left: 15%;
     border-bottom: solid;
-    width: 50%;
+    width: 60%;
     padding: 10px;
 }
 
@@ -134,7 +143,9 @@ font-weight: bold;
     height: 10%;
     width: 30%;
     font-size: 40px;
-    border-radius: 20px ;
+    border-radius: 20px;
+    border-style:solid;
+    box-shadow: 1px 1px 1px 1px;
 
 }
 
