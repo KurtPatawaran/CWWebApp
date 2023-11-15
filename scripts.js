@@ -2,7 +2,7 @@ let webstore = new Vue({
     el: '#app',
 
     data: {
-        siteName: 'After School Activities',
+        siteName: 'After School Activities - Enroll Now!',
         showSubject: true,
         order: {
             firstName: '',
