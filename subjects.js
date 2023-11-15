@@ -13,7 +13,7 @@ let subjects = [
     id: 1002,
     title: "English Writing Lessons",
     location: "Abu Dhabi",
-    image: "Icons/EnglishIcon.png",
+    image: "Icons/englishIcon.png",
     price: 200 + "AED",
     space:10,               //User Student View
     availableSpaces:10,      //Inventory View
@@ -23,7 +23,7 @@ let subjects = [
     id: 1003,
     title: "Basketball Lessons",
     location: "Sharjah",
-    image: "Icons/BasketballIcon.png",
+    image: "Icons/basketballIcon.png",
     price: 500 + "AED",
     space:10,               //User Student View
     availableSpaces:10,      //Inventory View
@@ -33,7 +33,7 @@ let subjects = [
     id: 1004,
     title: "Singing Lesonns",
     location: "Sharjah",
-    image: "../Icons/SingingIcon.png",
+    image: "Icons/singingIcon.png",
     price: 300 + "AED",
     space:10,               //User Student View
     availableSpaces:10,      //Inventory View
@@ -43,7 +43,7 @@ let subjects = [
     id: 1005,
     title: "FootBall Lessons",
     location: "Dubai",
-    image: "../Icons/FootBallIcon.png",
+    image: "Icons/footBallIcon.png",
     price: 500 + "AED",
     space:10,               //User Student View
     availableSpaces:10,      //Inventory View
@@ -53,7 +53,7 @@ let subjects = [
     id: 1006,
     title: "Karate Lessons",
     location: "Dubai",
-    image: "Icons/KarateIcon.png",
+    image: "Icons/karateIcon.png",
     price: 150 + "AED",
     space:10,               //User Student View
     availableSpaces:10,      //Inventory View
@@ -63,7 +63,7 @@ let subjects = [
     id: 1007,
     title: "Dancing Lessons",
     location: "Sharjah",
-    image: "Icons/DancingIcon.png",
+    image: "Icons/dancingIcon.png",
     price: 200 + "AED",
     space:10,               //User Student View
     availableSpaces:10,      //Inventory View
@@ -73,7 +73,7 @@ let subjects = [
     id: 1008,
     title: "Guitar Lessons",
     location: "Dubai",
-    image: "Icons/GuitarIcon.png",
+    image: "Icons/guitarIcon.png",
     price: 300 + "AED",
     space:10,               //User Student View
     availableSpaces:10,      //Inventory View
@@ -83,7 +83,7 @@ let subjects = [
     id: 1009,
     title: "Programming Lessons",
     location: "Dubai",
-    image: "Icons/ProgramingIcon.png",
+    image: "Icons/programingIcon.png",
     price: 250 + "AED",
     space:10,               //User Student View
     availableSpaces:10,      //Inventory View
@@ -93,7 +93,7 @@ let subjects = [
     id: 1010,
     title: "Culinary Lessons",
     location: "Dubai",
-    image: "Icons/CulinaryIcon.png",
+    image: "Icons/culinaryIcon.png",
     price: 800 + "AED",
     space:10,               //User Student View
     availableSpaces:10,      //Inventory View
