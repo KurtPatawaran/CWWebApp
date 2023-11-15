@@ -1,4 +1,4 @@
-#chkBox{
+/* #chkBox{
     width: 100%; 
     margin-top: 20px;
 }
@@ -22,13 +22,7 @@ p{
     width: 25%
 }
 
-img{
-    width: 150px;
-    height: 150px;
-    float: right;
-    margin-right: -20px;
-    margin-bottom: 10px;
-}
+
 
 #subjectText{
     font-size: 15px;
@@ -40,4 +34,9 @@ img{
 #CartPage{
     margin-top: 20px;
     margin-left: 20%;
+} */
+img{
+    width: 100px;
+    height: 100px;
+    
 }

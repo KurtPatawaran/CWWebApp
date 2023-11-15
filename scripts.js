@@ -18,7 +18,7 @@ let webstore = new Vue({
             this.cart.push(subject.id);
         },
 
-        showCheckout() {
+        showCheckout1() {
             if (this.cart.length > 0) {
                 this.showSubject = !this.showSubject;
             } else {
@@ -26,8 +26,20 @@ let webstore = new Vue({
             }
         },
 
+        showCheckout2() {      
+            this.showSubject = !this.showSubject;
+        },
+
         submitForm() {
-            alert('You Have Successfully Applied :D');
+            if (this.cart.length > 0) {
+                this.showSubject = !this.showSubject;
+                alert('You Have Successfully Applied :D');
+                this.cart.length=0;
+            } else {
+                this.showSubject = !this.showSubject;
+                alert('Add a lesson to the cart to proceed to checkout.');
+            }
+            
         },
 
         cartCount(id) {

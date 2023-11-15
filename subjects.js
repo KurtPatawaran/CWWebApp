@@ -43,7 +43,7 @@ let subjects = [
     id: 1005,
     title: "FootBall Lessons",
     location: "Dubai",
-    image: "Icons/FootBall.png",
+    image: "Icons/FootBallIcon.png",
     price: 500 + "AED",
     space:10,               //User Student View
     availableSpaces:10,      //Inventory View
@@ -83,7 +83,7 @@ let subjects = [
     id: 1009,
     title: "Programming Lessons",
     location: "Dubai",
-    image: "Icons/ProgrammingIcon.png",
+    image: "Icons/ProgramingIcon.png",
     price: 250 + "AED",
     space:10,               //User Student View
     availableSpaces:10,      //Inventory View

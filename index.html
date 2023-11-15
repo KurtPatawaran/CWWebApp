@@ -8,7 +8,7 @@
     <script src="https://cdn.jsdelivr.net/npm/vue@2.7.14/dist/vue.js"></script>
     <script src="subjects.js"></script>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
-    <!-- <link rel="stylesheet" href="styles.css"> -->
+    <link rel="stylesheet" href="styles.css">
 
 </head>
 
@@ -19,16 +19,20 @@
                 <div style="margin-left: 30px;">
                     <p style="font-size: 40px;">{{ siteName }}</p>
                 </div>
-                <div id="chkBox">
-                    <button v-on:click="showCheckout" id="chkBtn">
-                        {{cart.length > 0 ? cart.length : ''}}
-                        <span class="fas fa-cart-plus"></span> Checkout
-                    </button>
-                </div>
             </div>
         </header>
 
         <main>
+            <div id="chkBox">
+                <button v-on:click="showCheckout1" id="chkBtn" v-if="showSubject">
+                    {{cart.length > 0 ? cart.length : ''}}
+                    <span class="fas fa-cart-plus"></span> Checkout
+                </button>
+
+                <button v-on:click="showCheckout2" id="chkBtn" v-else>
+                    <span></span> Return
+                </button>
+            </div>
 
             <!--Subject Page-->
             <div v-if="showSubject">
