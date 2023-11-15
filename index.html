@@ -21,13 +21,6 @@
         </header>
 
         <main>
-            <div>
-                <label>
-                    Search by Title or Location:
-                    <input v-model.trim="searchQuery" />
-                </label>
-            </div>
-
             <div id="chkBox">
                 <button v-on:click="showCheckout1" id="chkBtn" v-if="showSubject">
                     {{cart.length > 0 ? cart.length : ''}}
@@ -43,6 +36,14 @@
             <div v-if="showSubject">
 
                 <div>
+
+                    <div>
+                        <label>
+                            Search:
+                            <input v-model.trim="searchQuery" />
+                        </label>
+                    </div>
+
                     <!-- Added these buttons for sorting -->
                     <label>
                         <input type="radio" v-model="sortOrder" value="ascSubject">
