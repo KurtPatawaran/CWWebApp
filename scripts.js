@@ -68,13 +68,18 @@ let webstore = new Vue({
             return subject.availableSpaces > this.cartCount(subject.id);
         },
 
+        // Remove a subject from the cart based on its ID
         removeFromCart(id) {
-            // Remove a subject from the cart
+            // Find the index of the subject with the given ID in the cart
             const index = this.cart.indexOf(id);
+
+            // Check if the subject is in the cart
             if (index !== -1) {
+                // Remove the subject from the cart using splice
                 this.cart.splice(index, 1);
-                    //if cart is empty bring user back to subject page
-                if(this.cart.length===0){               
+
+                // If the cart is empty after removal, bring the user back to the subject page
+                if (this.cart.length === 0) {
                     this.showSubject = !this.showSubject;
                 }
             }

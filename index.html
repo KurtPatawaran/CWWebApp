@@ -47,61 +47,68 @@
                                 <!-- Added these buttons for sorting -->
                                 <label>
                                     <input type="radio" v-model="sortOrder" value="ascSubject">
-                                    Sort Subject A to Z
+                                    Subject Ascending
                                 </label>
                                 <br>
                                 <label>
                                     <input type="radio" v-model="sortOrder" value="descSubject">
-                                    Sort Subject Z to A
+                                    Subject Descending
                                 </label>
                                 <br><br><br>
                                 <label>
                                     <input type="radio" v-model="sortOrder" value="ascLocation">
-                                    Sort Location A to Z
+                                    Location Ascending
                                 </label>
                                 <br>
                                 <label>
                                     <input type="radio" v-model="sortOrder" value="descLocation">
-                                    Sort Location Z to A
+                                    Location Descending
                                 </label>
                                 <br><br><br>
                                 <label>
                                     <input type="radio" v-model="sortOrder" value="ascPrice">
-                                    Sort Price Low to High
+                                    Price Low to High
                                 </label>
                                 <br>
                                 <label>
                                     <input type="radio" v-model="sortOrder" value="descPrice">
-                                    Sort Price High to Low
+                                    Price High to Low
                                 </label>
                                 <br><br><br>
                                 <label>
                                     <input type="radio" v-model="sortOrder" value="ascSpaces">
-                                    Sort Spaces Low to High
+                                    Spaces Low to High
                                 </label>
                                 <br>
                                 <label>
                                     <input type="radio" v-model="sortOrder" value="descSpaces">
-                                    Sort Spaces High to Low
+                                    Spaces High to Low
                                 </label>
                             </div>
                         </div>
                     </div>
+                    <!-- Display subjects in a grid with information and action buttons -->
                     <div id="subjectPane">
                         <div id="subjectDiv" v-for="subject in filteredSubjects">
+                            <!-- Display subject image -->
                             <div id="imgDiv">
                                 <figure>
                                     <img v-bind:src="subject.image">
                                 </figure>
                             </div>
+                            <!-- Display subject information -->
                             <div id="subjectText">
                                 <p id="subText" v-text="subject.title" style="font-size: 30px;"></p>
                                 <p id="subText">Location: {{subject.location}}</p>
                                 <p id="subText">Space: {{subject.availableSpaces - cartCount(subject.id)}}</p>
                                 <p id="subText">Price: {{subject.price}}</p>
 
+                                <!-- Add to cart button, conditionally shown based on availability -->
                                 <button v-on:click="addToCart(subject)" v-if="canAddToCart(subject)"> Add to cart </button>
+                                <!-- Disabled button if the subject is not available -->
                                 <button disabled="disabled" v-else> N/A </button>
+
+                                <!-- Display availability status -->
                                 <span v-if="subject.availableSpaces === cartCount(subject.id)">
                                     All Out!
                                 </span>
@@ -111,7 +118,6 @@
                                 <span v-else>
                                     BUY NOW!
                                 </span>
-
                             </div>
                         </div>
                     </div>
@@ -136,8 +142,10 @@
                             <input v-model.trim="order.contactNum" type="number" />
                         </p>
                     </div>
+                    <!-- Display details of the enrolled applicant in a styled div -->
                     <div id="copyDetailDiv">
-                        <h2>Enrolee Applicant</h2>
+                        <h2>Enrollee Applicant</h2>
+                        <!-- Display applicant details -->
                         <p>First Name: {{order.firstName}}</p>
                         <p>Last Name: {{order.lastName}}</p>
                         <p>Contact Number: {{order.contactNum}}</p>
@@ -147,8 +155,12 @@
                     <h1 style="font-size: 50px; margin-left: 30px; color: antiquewhite">Shopping Cart</h2>
                     <div id="cartlistPane">
                         <ol>
+                            <!-- Loop through each item in the cart and create a list item -->
                             <li v-for="item in cart" :key="item.id" id="textCart">
+                                <!-- Display the title and price of the subject associated with the current cart item -->
                                 {{ getSubjectById(item).title }} - {{ getSubjectById(item).price }}
+                                
+                                <!-- Button to remove the subject from the cart when clicked -->
                                 <button @click="removeFromCart(item)">Remove</button>
                             </li>
                         </ol>
@@ -157,9 +169,10 @@
 
                 </div>
             </main>
-
         </div>
+        <!-- External JavaScript files for subjects and custom scripts -->
         <script src="subjects.js"></script>
         <script type="text/javascript" src="scripts.js"></script>
     </body>
+
 </html>
